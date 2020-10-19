@@ -46,6 +46,20 @@ public class GetRequest03 {
         // body("additionalneeds",Matchers.equalTo("Breakfast"));
 
 
+        /* esas yontem
+        response.
+                then().
+                assertThat().
+                statusCode(200).
+                contentType("application/json").
+                body( "firstname" , Matchers.equalTo("Eric"),
+                        "lastname", Matchers.equalTo("Jackson"),
+                        "totalprice", Matchers.equalTo(259),
+                        "depositpaid", Matchers.equalTo(true));
+
+         */
+
+
         //Status code 2. yol
         //   assertEquals(200,response.getStatusCode());
 
