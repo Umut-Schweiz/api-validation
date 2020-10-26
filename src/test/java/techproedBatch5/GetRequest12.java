@@ -1,4 +1,5 @@
 package techproedBatch5;
+import com.google.gson.Gson;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
@@ -30,5 +31,10 @@ public class GetRequest12 extends TestBase {
         softAssert.assertEquals(listOfMap.get(listOfMap.size()-2).get("title"),"numquam repellendus a magnam",
                 "title uyusmuyor.");
         softAssert.assertAll();
+
+        //Map objesini json formatina cevirme
+        Gson gson= new Gson();
+        System.out.println(gson.toJson(listOfMap)); // Serialization
+
     }
 }

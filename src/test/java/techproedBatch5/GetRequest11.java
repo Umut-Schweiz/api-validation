@@ -1,5 +1,6 @@
 package techproedBatch5;
 
+import com.google.gson.Gson;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
@@ -40,14 +41,18 @@ GSON 1) Json formatindaki data lari Java Object lerine dönüstürür (De Serial
         softAssert.assertEquals(map.get("completed"),false, "False degerinde degil");
 
         //userId, title ve id degerlerini verify ediniz.
-        softAssert.assertEquals(map.get("userId"),1.0, "1 degerinde degil");//deger dooble a cevrildigi icin
+        softAssert.assertEquals(map.get("userId"),1, "1 degerinde degil");//deger dooble a cevrildigi icin
         softAssert.assertEquals(map.get("title"),"quis ut nam facilis et officia qui", "False degerinde degil");
-        softAssert.assertEquals(map.get("id"),2.0, "2 degerinde degil");
+        softAssert.assertEquals(map.get("id"),2, "2 degerinde degil");
 
 
         softAssert.assertAll();
 
+        //Map objesini json formatina cevirme
+        Gson gson= new Gson();
+        System.out.println(gson.toJson(map));
 
 
-     }
+
+    }
 }
